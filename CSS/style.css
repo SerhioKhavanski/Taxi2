@@ -102,9 +102,64 @@ justify-content: space-between;
 align-items: flex-end;
 list-style: none;
 align-items:center;
-width: 40%;
+width: 50%;
 padding: 2% 0;
+transition: all 0.4s ease;
 }
+
+.menu-desktop li a {
+  display: block;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.menu-desktop li a.active {
+  background-color: #a738ff; /* Фиолетовый фон */
+  color: white;
+}
+/* menu for js */
+.menu-fixed {
+  position: fixed;
+  top: 1%;
+  left: 28%;
+  transform: translateX(-50%);
+  background-color: #111;
+  padding: 14px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(167, 56, 255, 0.3);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.menu-fixed.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menu-fixed ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  align-items:center;
+}
+
+.menu-fixed a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.menu-fixed a.active {
+  background-color: #a738ff;
+}
+/* menu for js */
 .header-info-point{
 margin-top: 1.5vh;
 display: flex;
@@ -226,7 +281,9 @@ fill: #4b235c;
     padding: 2% 0;
     position: relative;
     right: 8%;
+
 }
+
 
 .about-point {
     border-radius: 15px;
@@ -236,6 +293,14 @@ fill: #4b235c;
     background-color: #2D2D2D;
     align-items: center;
     margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .about-point img {
@@ -305,7 +370,7 @@ fill: #4b235c;
     gap: 2rem;
     width: max-content;
     position: absolute;
-    transform: translate(5%, 18%);
+    transform: translate(5%, 12%);
 }
   
   .why-content-point {
@@ -316,6 +381,13 @@ fill: #4b235c;
     gap: 1rem;
     align-items: center;
     width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+ .show {
+    opacity: 1;
+    transform: translateY(0);
   }
   
   .img-wrapper {
@@ -465,6 +537,13 @@ fill: #4b235c;
     width: 28vw;
     gap: 5%;
     position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .active-point {
+    opacity: 1;
+    transform: translateY(0);
   }
   .requirements-info-point-img {
     position: absolute;
@@ -673,6 +752,24 @@ fill: #4b235c;
     border-radius: 60px;
     border:20px solid #2d2d2d
   }
+  .view>p{
+    text-align: center;
+    margin-bottom: 2vh;
+  }
+  .map-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .map-container iframe {
+    pointer-events: none; 
+    transition: pointer-events 0.3s ease;
+  }
+  
+
+  .map-container.active iframe {
+    pointer-events: auto; 
+  }
   /* view-points */
   .all-view-points{
     margin: 3% 0;
@@ -696,7 +793,6 @@ fill: #4b235c;
   .view-img {
     width: 40%;
     aspect-ratio: 1 / 1;
-    background-image:url(../img/1662531666_3-kartinkof-club-p-novie-i-krasivie-kartinki-siluet-goroda-3.webp) ;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

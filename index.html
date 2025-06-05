@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="shortcut icon" href="Img/Taxi (1).webp" type="image/x-icon">
     <script src="JS/load.js" defer></script>
+    <script src="JS/menu.js" defer></script>
+    <script src="JS/fix-menu.js" defer></script>
+    <script src="JS/about-point-anim.js" defer></script>
+    <script src="JS/why-point-anim.js" defer></script>
+    <script src="JS/requirements-anim.js" defer></script>
+    <script src="JS/map.js" defer></script>
 </head>
 <body>
     <header>
@@ -14,13 +20,15 @@
         <nav>
             <ul class="menu-desktop">
                 <img src="Img/Taxi (1).webp" alt="">
-                <li><a href="">О нас</a></li>
-                <li><a href="">Условия работы</a></li>
-                <li><a href="">Реестр</a></li>
-                <li><a href="">Заявка</a></li>
-                <li><a href="">Контакты</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#conditions">Условия работы</a></li>
+                <li><a href="#requirements">Реестр</a></li>
+                <li><a href="#start">Заявка</a></li>
+                <li><a href="#viewPoint">Пункты осмотра</a></li>
+                <li><a href="#footer">Контакты</a></li>
             </ul>
         </nav>
+
         <!------------------------- menu------------------------------>
         <div class="header-main-info-wrapper">
 
@@ -103,9 +111,21 @@
         <!---------------------------- hero img---------------------- -->
 
     </header>
+
+    <nav class="menu-fixed">
+        <ul>
+            <img src="Img/Taxi (1).webp" alt="">
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#conditions">Условия работы</a></li>
+          <li><a href="#requirements">Реестр</a></li>
+          <li><a href="#start">Заявка</a></li>
+          <li><a href="#viewPoint">Пункты осмотра</a></li>
+          <li><a href="#footer">Контакты</a></li>
+        </ul>
+      </nav>
     <!----------------------header----------------------------->
     <main>
-        <div class="about">
+        <div id="about" class="about">
             <img  src="Img/Frame 26.webp" alt="">
 
             <div class="about-points">
@@ -205,9 +225,9 @@
         </div>
 
 
-            <section class="job-conditions">
+            <section  class="job-conditions">
                 
-                <div class="job-content">
+                <div id="conditions" class="job-content" >
 
                     <h2>Условия работы</h2>
             
@@ -231,7 +251,7 @@
 
 
 
-        <div class="requirements">
+        <div id="requirements" class="requirements">
             <h2>Требования к реестру</h2>
 
             <div class="requirements-info-wrapper">
@@ -332,9 +352,9 @@
             </div>
         </div>
 
-        <section class="how-start">
-            <h2>Как начать работать?</h2>
-            <div class="how-start-wrapper">
+        <section id="start"  class="how-start">
+            <h2 >Как начать работать?</h2>
+            <div  class="how-start-wrapper">
               <div class="how-start-steps">
                 <div class="step">
                   <div class="step-icon">
@@ -368,7 +388,7 @@
               <form class="work-wrapper-form" id="formochka">
                 <h3>Присоединиться к команде !</h3>
             
-                <div class="input-field">
+                <div  class="input-field">
                   <p>Имя, Фамилия</p>
                   <input type="text" name="name" placeholder="Укажите своё имя и фамилию" required>
                 </div>
@@ -400,10 +420,13 @@
             </div>
         </section>
 
-        <div class="view">
+        <div id="viewPoint" class="view">
 
             <h2>Пункты осмотра</h2>
-            <div style="position:relative;overflow:hidden;"><iframe class="map" src="https://yandex.by/map-widget/v1/?ll=27.727503%2C53.882847&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDExNxIc0JHQtdC70LDRgNGD0YHRjCwg0JzRltC90YHQuiIKDQ5y3EEVZpxXQg%2C%2C&z=11.45" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+            <p>Нажмите для активации карты</p>
+            <div class="map-container">
+                <div style="position:relative;overflow:hidden;"><iframe class="map" src="https://yandex.by/map-widget/v1/?ll=27.727503%2C53.882847&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDExNxIc0JHQtdC70LDRgNGD0YHRjCwg0JzRltC90YHQuiIKDQ5y3EEVZpxXQg%2C%2C&z=11.45" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                </div>
             </div>
 
 
@@ -481,8 +504,8 @@
     </main>
     <!-------------------main--------------------------->
     <hr class="footer-div">
-    <footer id="footer" >
-        <div class="footer-wraper">
+    <footer  >
+        <div id="footer" class="footer-wraper">
           <div class="footer-info">
   
             <div class="footer-lnk">
